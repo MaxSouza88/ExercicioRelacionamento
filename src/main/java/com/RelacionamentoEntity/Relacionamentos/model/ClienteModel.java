@@ -20,12 +20,12 @@ public class ClienteModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer codigo;
 
-    @Column(name = "nome_cliente")
+    @Column(name = "cliente_id")
     private String nomeCliente;
 
     //OneToMany = 1 para todos. Uma relacao para muitos.
     @JsonIgnore //evita recursividade nas buscas
-    @OneToMany (mappedBy = "clienteModel", cascade = CascadeType.ALL) //cascade, é um recurso de exclusao. Se exclui cliente, exclui também o endereço.
-    private List<EnderecoModel> enderecos = new ArrayList<>();
+    @OneToMany (mappedBy = "cliente", cascade = CascadeType.ALL) //cascade, é um recurso de exclusao. Se exclui cliente, exclui também o endereço.
+    private List<EnderecoModel> enderecoModel = new ArrayList<>();
 
 }

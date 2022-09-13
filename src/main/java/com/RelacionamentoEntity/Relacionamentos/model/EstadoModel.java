@@ -14,19 +14,19 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "estado")
+@Table(name = "estados")
 public class EstadoModel implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer codigo;
 
-    @Column(name = "estado")
+    @Column(name = "estado_id")
     private String nomeEstado;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "estadoModel",cascade = CascadeType.ALL)
-    private List<CidadeModel> cidades = new ArrayList<>();
+    @OneToMany(mappedBy = "estado",cascade = CascadeType.ALL)
+    private List<CidadeModel> cidadeModel = new ArrayList<>();
 
 
 }
